@@ -16,6 +16,11 @@
   border-style: solid;
 }
 
+#menuResponsivo {
+  background-color: #6BB9F0;
+  display: none;
+}
+
 #conteudo {
   background-color: #E4F1FE;
   padding: 20px 10px 20px 10px;
@@ -32,4 +37,19 @@
 
 li {
   list-style: none;
+}
+
+@media only screen and (max-width: 768px) {
+  #menuResponsivo {
+    display: block;
+  }
+  #menu {
+    display: none;
+  }
+  #conteudo {
+    margin: 10px 0px 10px 0px;
+  }
+  #banner {
+    padding: 10px 0px 20px 0px;
+  }
 }

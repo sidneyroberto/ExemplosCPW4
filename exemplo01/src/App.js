@@ -8,33 +8,41 @@ import Conteudo from './Conteudo';
 import Rodape from './Rodape';
 
 import { BrowserRouter } from 'react-router-dom';
+import MenuResponsivo from './MenuResponsivo';
 
 
 class App extends Component {
   render() {
     return (
       <BrowserRouter>
-        <div className="container">
+        <div>
 
-          <div className="row">
-            <div className="col" id="banner">
-              <Banner />
-            </div>
+          <div id="menuResponsivo">
+            <MenuResponsivo />
           </div>
 
-          <div className="row">
-            <div className="col-md-3" id="menu">
-              <Menu />
+          <div className="container">
+
+            <div className="row">
+              <div className="col" id="banner">
+                <Banner />
+              </div>
             </div>
 
-            <div className="col-md-9" id="conteudo">
-              <Conteudo />
-            </div>
-          </div>
+            <div className="row">
+              <div className="col-md-3" id="menu">
+                <Menu />
+              </div>
 
-          <div className="row">
-            <div className="col" id="rodape">
-              <Rodape />
+              <div className="col-md-9" id="conteudo">
+                <Conteudo />
+              </div>
+            </div>
+
+            <div className="row">
+              <div className="col" id="rodape">
+                <Rodape />
+              </div>
             </div>
           </div>
         </div>

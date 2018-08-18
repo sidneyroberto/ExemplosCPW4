@@ -8,7 +8,7 @@ class Menu extends Component {
         return (
             <div>
                 Menu
-                <ul>
+                    <ul>
                     <li>
                         <Link to="/home">Home</Link>
                     </li>
