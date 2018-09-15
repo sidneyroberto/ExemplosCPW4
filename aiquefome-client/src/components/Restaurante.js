@@ -5,6 +5,7 @@ class Restaurante extends Component {
     render() {
         return (
             <div>Restaurante</div>
+
         );
     }
 }

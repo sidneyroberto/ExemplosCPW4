@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import bandeja from './bandeja.png';
 import talheres from './talheres.png';
+import Consulta from './Consulta';
 
 class App extends Component {
   render() {
@@ -18,6 +19,7 @@ class App extends Component {
 
           <div className="row">
             <div id="conteudo" className="col">
+              <Consulta />
             </div>
           </div>
 
