@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import RestauranteService from '../services/RestauranteService';
+import Restaurante from './Restaurante';
 
 class Consulta extends Component {
 
@@ -18,10 +19,14 @@ class Consulta extends Component {
          */
         this.aoCarregarOsRestaurantes =
             this.aoCarregarOsRestaurantes.bind(this);
+        this.pesquisar = this.pesquisar.bind(this);
     }
 
-    componentDidMount() {
-        this.service.recuperarTodos(this.aoCarregarOsRestaurantes);
+    pesquisar(evento) {
+        evento.preventDefault();
+        /**
+         * Usar o serviço de consulta
+         */
     }
 
     aoCarregarOsRestaurantes(restaurantesRecuperados) {
@@ -32,28 +37,26 @@ class Consulta extends Component {
         const listaRestaurantes =
             this.state.restaurantes.map(restaurante => {
                 return (
-                    <tr key={restaurante.id}>
-                        <td>{restaurante.nome}</td>
-                        <td>{restaurante.endereco}</td>
-                        <td>{restaurante.tiposPrato}</td>
-                    </tr>
+                    <Restaurante key={restaurante.id} restaurante={restaurante} />
                 )
             });
         return (
             <div>
-                <div className="text-center">
-                    <table className="table table-striped table-hover">
-                        <thead>
-                            <tr>
-                                <th>Nome</th>
-                                <th>Endereço</th>
-                                <th>Tipos de prato</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {listaRestaurantes}
-                        </tbody>
-                    </table>
+                <div className="row">
+                    <div className="col-md-3"></div>
+                    <div className="col-md-6">
+                        <div className="input-group">
+                            <input
+                                type="text"
+                                name="filtro"
+                                className="form-control campoConsulta"
+                                placeholder="O que você quer comer?" />
+                            <button onClick={this.pesquisar} className="btn btn-secondary">
+                                <i className="fas fa-search" />
+                            </button>
+                        </div>
+                    </div>
+                    <div className="col-md-3"></div>
                 </div>
             </div>
         );

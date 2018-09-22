@@ -27,3 +27,32 @@
 #imgRodape {
   width: 20px;
 }
+
+.thumbailRestaurante {
+  width: 100%;
+}
+
+.cardRestaurante {
+  margin-bottom: 10px;
+  box-shadow: 5px 5px #e2e0e0;
+}
+
+.cardRestaurante:hover {
+  width: 101%;
+  font-size: 110%;
+  box-shadow: 7px 7px #db9d9d;
+}
+
+.campoConsulta {
+  text-align: center
+}
+
+.campoConsulta::placeholder {
+  color: #a9a5a5;
+}
+
+@media only screen and (max-width: 768px) {
+  .cardRestaurante {
+    margin: 0px 10px 10px 10px;
+  }
+}
