@@ -2,6 +2,17 @@ import { firebaseDatabase } from '../utils/firebaseUtils';
 
 class RestauranteService {
 
+    recuperarPorTiposDePrato(filtro, callback) {
+        this.recuperarTodos((restaurantes) => {
+            let restaurantesFiltrados =
+                restaurantes.filter(
+                    (restaurante) =>
+                        restaurante.tiposPrato.includes(filtro)
+                );
+            callback(restaurantesFiltrados);
+        });
+    }
+
     recuperarTodos(callback) {
         firebaseDatabase
             .ref('restaurantes')
