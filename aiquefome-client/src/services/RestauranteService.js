@@ -7,7 +7,7 @@ class RestauranteService {
             let restaurantesFiltrados =
                 restaurantes.filter(
                     (restaurante) =>
-                        restaurante.tiposPrato.includes(filtro)
+                        restaurante.tiposPrato.toLowerCase().includes(filtro.toLowerCase())
                 );
             callback(restaurantesFiltrados);
         });

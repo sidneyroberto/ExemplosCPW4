@@ -1,6 +1,21 @@
 import React, { Component } from 'react';
+import { firebaseStorage } from '../utils/firebaseUtils';
 
 class Restaurante extends Component {
+
+    constructor(props) {
+        super(props);
+        this.state = { urlImagem: '' };
+    }
+
+    componentDidMount() {
+        firebaseStorage
+            .ref(`imagens/${this.props.restaurante.enderecoImagem}`)
+            .getDownloadURL()
+            .then(url => {
+                this.setState({ urlImagem: url });
+            });
+    }
 
     render() {
         return (
@@ -13,7 +28,7 @@ class Restaurante extends Component {
                                     <img
                                         className="rounded thumbailRestaurante"
                                         alt="Foto do restaurante"
-                                        src={this.props.restaurante.enderecoImagem} />
+                                        src={this.state.urlImagem} />
                                 </div>
                                 <div className="col-md-8">
                                     <h3>{this.props.restaurante.nome}</h3>
