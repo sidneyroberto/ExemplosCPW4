@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css?family=Indie+Flower');
+:root {
+  --cor-principal: #8c14fc;
+}
+
+body {
+  font-family: 'Indie Flower', cursive;
+}
+
+#banner {
+  text-align: center;
+  padding: 30px 0px 10px 0px;
+  background-color: var(--cor-principal);
+  color: white;
+  font-size: 180%;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+img {
+  width: 100%;
+}
+
+.btn-primary {
+  background-color: var(--cor-principal) !important;
+  border-color: var(--cor-principal) !important;
+}
