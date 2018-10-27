@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import ReactLoading from 'react-loading';
+
 import ImagemService from '../services/ImagemService';
 import Imagem from './Imagem';
 
@@ -10,7 +12,8 @@ class Consulta extends Component {
         this.state = {
             consulta: '',
             resultados: [],
-            carregando: false
+            carregando: false,
+            resultadoNaoEncontrado: false
         };
 
         this.servico = new ImagemService();
@@ -24,17 +27,27 @@ class Consulta extends Component {
     }
 
     consultar() {
-        this.setState({ carregando: true });
+        this.setState({
+            carregando: true,
+            resultadoNaoEncontrado: false
+        });
 
         this.servico
             .pesquisarImagens(
                 this.state.consulta,
                 resposta => {
                     let resultados = [];
-                    resposta.images.map(imagem => resultados.push(imagem));
-                    this.setState({ resultados, carregando: false });
+                    resposta.hits.map(imagem => resultados.push(imagem));
+                    this.setState({
+                        resultados,
+                        carregando: false,
+                        resultadoNaoEncontrado: resultados.length === 0 ? true : false
+                    });
                 },
-                erro => console.log(erro)
+                erro => {
+                    console.log(erro);
+                    this.setState({ carregando: false });
+                }
             );
     }
 
@@ -43,7 +56,7 @@ class Consulta extends Component {
         const listaImagens = this.state.resultados.map(resultado => {
             return (
                 <div key={resultado.id}>
-                    <Imagem url={resultado.url} titulo={`Imagem${resultado.id}`} />
+                    <Imagem url={resultado.webformatURL} titulo={`Imagem${resultado.id}`} />
                 </div>
             )
         });
@@ -72,6 +85,17 @@ class Consulta extends Component {
                 </div>
 
                 <br />
+                {
+                    this.state.carregando &&
+                    <ReactLoading
+                        type="bubbles"
+                        color="#8c14fc"
+                        width="50%" />
+                }
+                {
+                    this.state.resultadoNaoEncontrado &&
+                    <h4>Nenhuma imagem encontrada</h4>
+                }
                 {listaImagens}
             </div>
         );

@@ -1,10 +1,15 @@
-@import url('https://fonts.googleapis.com/css?family=Indie+Flower');
+@import url('https://fonts.googleapis.com/css?family=Kalam|Kaushan+Script');
 :root {
   --cor-principal: #8c14fc;
 }
 
 body {
-  font-family: 'Indie Flower', cursive;
+  font-family: 'Kaushan Script', cursive;
+}
+
+button {
+  font-family: 'Kalam', cursive;
+  font-weight: bold;
 }
 
 #banner {
@@ -12,7 +17,7 @@ body {
   padding: 30px 0px 10px 0px;
   background-color: var(--cor-principal);
   color: white;
-  font-size: 180%;
+  font-size: 200%;
   font-weight: bold;
   margin-bottom: 10px;
 }
