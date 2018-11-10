@@ -1,0 +1,63 @@
+@import url("https://fonts.googleapis.com/css?family=Ubuntu|Source+Sans+Pro");
+body {
+  font-family: "Ubuntu", sans-serif;
+  margin: 0px;
+  width: 100%; }
+
+a {
+  text-decoration: none; }
+
+#topo {
+  background-color: #00b5cc;
+  padding: 20px 10px 10px 10px;
+  width: 100%; }
+  #topo img {
+    width: 80px;
+    margin-right: 20px; }
+  #topo span {
+    vertical-align: 20px;
+    font-size: 150%;
+    color: white;
+    font-weight: bold;
+    text-shadow: 2px 2px 0px #027988; }
+
+#conteudo {
+  padding: 10px;
+  height: 100%;
+  background-color: #fff;
+  color: #2c3e50;
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 110%; }
+
+#barraBotoes {
+  background-color: #00b5cc;
+  padding: 10px;
+  width: 100%; }
+
+.botaoMenu {
+  margin: 10px;
+  display: inline-block;
+  text-align: center; }
+  .botaoMenu img {
+    width: 50px;
+    height: 50px; }
+  .botaoMenu span {
+    font-size: 80%;
+    font-weight: bold;
+    color: white;
+    text-shadow: 1px 1px 0px #027988; }
+
+@media only screen and (max-width: 600px) {
+  #topo {
+    top: 0;
+    position: fixed;
+    overflow: hidden; }
+  #conteudo {
+    margin-top: 110px;
+    margin-bottom: 110px; }
+  #barraBotoes {
+    bottom: 0;
+    position: fixed; }
+  .botaoMenu img {
+    width: 35px;
+    height: 35px; } }

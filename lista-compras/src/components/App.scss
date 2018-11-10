@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu|Source+Sans+Pro');
+
+$cor-principal: #00b5cc;
+$cor-barra-botoes: #00b5cc;
+$cor-conteudo: #fff;
+$cor-texto-conteudo: #2c3e50;
+$cor-sombra: #027988;
+$sombra-logo: 2px 2px 0px $cor-sombra;
+$sombra-botao: 1px 1px 0px $cor-sombra;
+$fonte-principal: 'Ubuntu', sans-serif;
+$fonte-conteudo: 'Source Sans Pro', sans-serif;
+$largura-logo: 80px;
+$margem-conteudo: $largura-logo + 30px;
+$largura-imagem-botao: 50px;
+$altura-imagem-botao: 50px;
+$largura-imagem-botao-mobile: 35px;
+$altura-imagem-botao-mobile: 35px;
+
+body {
+    font-family: $fonte-principal;
+    margin: 0px;
+    width: 100%;
+}
+
+a {
+    text-decoration: none;
+}
+
+#topo {
+    background-color: $cor-principal;
+    padding: 20px 10px 10px 10px;
+    width: 100%;
+
+    img {
+        width: $largura-logo;
+        margin-right: 20px;
+    }
+
+    span {
+        vertical-align: 20px;
+        font-size: 150%;
+        color: white;
+        font-weight: bold;
+        text-shadow: $sombra-logo;
+    }
+}
+
+#conteudo {
+    padding: 10px;
+    height: 100%;
+    background-color: $cor-conteudo;
+    color: $cor-texto-conteudo;
+    font-family: $fonte-conteudo;
+    font-size: 110%;
+}
+
+#barraBotoes {
+    background-color: $cor-barra-botoes;
+    padding: 10px;
+    width: 100%;
+}
+
+.botaoMenu {
+    margin: 10px;
+    display: inline-block;
+    text-align: center;
+
+    img {
+        width: $largura-imagem-botao;
+        height: $altura-imagem-botao;
+    }
+
+    span {
+        font-size: 80%;
+        font-weight: bold;
+        color: white;
+        text-shadow: $sombra-botao;
+    }
+}
+
+@media only screen and(max-width: 600px) {
+
+    #topo {
+        top: 0;
+        position: fixed;
+        overflow: hidden;
+    }
+
+    #conteudo {
+        margin-top: $margem-conteudo;
+        margin-bottom: $margem-conteudo;
+    }
+     
+    #barraBotoes {
+        bottom: 0;
+        position: fixed;
+    }
+
+    .botaoMenu {
+        img {
+            width: $largura-imagem-botao-mobile;
+            height: $altura-imagem-botao-mobile;
+        }
+    }
+}
