@@ -9,7 +9,7 @@ $sombra-logo: 2px 2px 0px $cor-sombra;
 $sombra-botao: 1px 1px 0px $cor-sombra;
 $fonte-principal: 'Ubuntu', sans-serif;
 $fonte-conteudo: 'Source Sans Pro', sans-serif;
-$largura-logo: 80px;
+$largura-logo: 70px;
 $margem-conteudo: $largura-logo + 30px;
 $largura-imagem-botao: 50px;
 $altura-imagem-botao: 50px;
@@ -56,7 +56,7 @@ a {
 
 #barraBotoes {
     background-color: $cor-barra-botoes;
-    padding: 10px;
+    padding: 5px;
     width: 100%;
 }
 

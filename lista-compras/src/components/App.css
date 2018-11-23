@@ -12,7 +12,7 @@ a {
   padding: 20px 10px 10px 10px;
   width: 100%; }
   #topo img {
-    width: 80px;
+    width: 70px;
     margin-right: 20px; }
   #topo span {
     vertical-align: 20px;
@@ -31,7 +31,7 @@ a {
 
 #barraBotoes {
   background-color: #00b5cc;
-  padding: 10px;
+  padding: 5px;
   width: 100%; }
 
 .botaoMenu {
@@ -53,8 +53,8 @@ a {
     position: fixed;
     overflow: hidden; }
   #conteudo {
-    margin-top: 110px;
-    margin-bottom: 110px; }
+    margin-top: 100px;
+    margin-bottom: 100px; }
   #barraBotoes {
     bottom: 0;
     position: fixed; }
